@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" style="-fx-background-color: #555d3a;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.ConnexionController">
+
+    <!-- Conteneur centré -->
+    <children>
+        <StackPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+            <!-- Carte principale -->
+            <children>
+                <VBox alignment="CENTER" maxWidth="450.0" prefWidth="450.0" spacing="0.0">
+                    <children>
+                        <!-- Bandeau supérieur turquoise -->
+                        <StackPane prefHeight="80.0" style="-fx-background-color: #66d1d3;">
+                            <children>
+                                <Label style="-fx-text-fill: #1b2a2f; -fx-font-size: 18px; -fx-font-weight: bold;" text="CONNEXION A LA BIBLIOTHEQUE" />
+                            </children>
+                        </StackPane>
+
+                        <!-- Corps foncé de la carte -->
+                        <AnchorPane prefHeight="266.0" prefWidth="450.0" style="-fx-background-color: #2c333a;">
+                            <children>
+                                <VBox spacing="18.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="30.0">
+                                    <padding>
+                                        <Insets bottom="0" left="0" right="0" top="0" />
+                                    </padding>
+
+                                    <!-- Champ Email -->
+                                    <children>
+                                        <VBox spacing="6.0">
+                                            <children>
+                                                <HBox spacing="8.0">
+                                                    <children>
+                                                        <Label style="-fx-text-fill: #f5f5f5; -fx-font-size: 14px;" text="👤" />
+                                                        <Label style="-fx-text-fill: #f5f5f5; -fx-font-size: 13px;" text="Nom d'utilisateur" />
+                                                    </children>
+                                                </HBox>
+
+                                                <!-- Ligne + champ "invisible" pour simuler le style de l'image -->
+                                                <VBox spacing="4.0">
+                                                    <children>
+                                                        <TextField fx:id="txtlogin" promptText="" style="-fx-background-color: transparent; -fx-text-fill: #f5f5f5; -fx-background-insets: 0; -fx-padding: 4 0 0 0; -fx-border-width: 0 0 1 0; -fx-border-color: #9ca1a9;" />
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Champ Password -->
+                                        <VBox spacing="6.0">
+                                            <children>
+                                                <HBox spacing="8.0">
+                                                    <children>
+                                                        <Label style="-fx-text-fill: #f5f5f5; -fx-font-size: 14px;" text="🔒" />
+                                                        <Label style="-fx-text-fill: #f5f5f5; -fx-font-size: 13px;" text="Mot de passe" />
+                                                    </children>
+                                                </HBox>
+
+                                                <VBox spacing="4.0">
+                                                    <children>
+                                                        <PasswordField fx:id="txtpassword" style="-fx-background-color: transparent; -fx-text-fill: #f5f5f5; -fx-background-insets: 0; -fx-padding: 4 0 0 0; -fx-border-width: 0 0 1 0; -fx-border-color: #9ca1a9;" />
+                                                    </children>
+                                                </VBox>
+                                            </children>
+                                        </VBox>
+
+                                        <!-- Ligne du bas : bouton + lien -->
+                                        <HBox spacing="10.0">
+                                            <children>
+                                                <Button fx:id="btnconnect" onAction="#checkconnection" prefHeight="34.0" prefWidth="130.0" style="-fx-background-color: #f4f4f4; -fx-text-fill: #1f2830; -fx-font-weight: bold; -fx-background-radius: 0;" text="LOGIN">
+                                                    <HBox.margin>
+                                                        <Insets bottom="0.0" left="0.0" right="0.0" top="20.0" />
+                                                    </HBox.margin>
+                                                </Button>
+                                                <HBox HBox.hgrow="ALWAYS" />
+                                                <Hyperlink style="-fx-text-fill: #9ca1a9; -fx-underline: false;" text="Forgot Password?">
+                                                    <HBox.margin>
+                                                        <Insets bottom="0.0" left="0.0" right="0.0" top="26.0" />
+                                                    </HBox.margin>
+                                                </Hyperlink>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                        <Label fx:id="lblMessage" layoutX="116.0" layoutY="226.0" prefHeight="18.0" prefWidth="217.0" textAlignment="CENTER" textFill="#f40a2d" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </VBox>
+            </children>
+        </StackPane>
+    </children>
+</AnchorPane>

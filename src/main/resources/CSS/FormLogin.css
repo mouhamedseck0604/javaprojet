@@ -1,0 +1,53 @@
+.root {
+    -fx-font-family: "Segoe UI", "Arial";
+    -fx-background-color: linear-gradient(to bottom, #f9f9f9, #eaeaea);
+}
+
+.title-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 0 20 0;
+}
+
+.form-grid {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20;
+    -fx-border-color: #dcdcdc;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.form-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #555555;
+    -fx-font-weight: bold;
+}
+
+.form-input {
+    -fx-pref-width: 220px;
+    -fx-padding: 8px;
+    -fx-background-color: #fdfdfd;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.form-input:focused {
+    -fx-border-color: #1976d2;
+    -fx-effect: dropshadow(gaussian, rgba(25,118,210,0.3), 6, 0, 0, 0);
+}
+
+.login-button {
+    -fx-background-color: #1976d2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #125ca1;
+}

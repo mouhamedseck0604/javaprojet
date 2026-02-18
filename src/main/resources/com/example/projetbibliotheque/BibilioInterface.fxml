@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@../../../CSS/tableaudebord.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.BibilioInterfaceController">
+<top>
+    <Label style="-fx-font-size: 18; -fx-font-weight: bold;" text="Tableau de bord - Bibliothécaire" />
+</top>
+<center>
+    <VBox alignment="CENTER" prefHeight="600.0" prefWidth="700.0" spacing="10" stylesheets="@../../../CSS/tableaudebord.css">
+         <Label fx:id="welcomeLabel" prefHeight="46.0" prefWidth="263.0" />
+        <Button onAction="#verslivre" prefHeight="50.0" prefWidth="350.0" text="Consultation des Livres" />
+        <Button prefHeight="50.0" prefWidth="330.0" text="Gestion des Adhérents" />
+        <Button onAction="#versemprunt" prefHeight="50.0" prefWidth="310.0" text="Gestion des Emprunts" />
+        <Button onAction="#handleDelays" prefHeight="50.0" prefWidth="290.0" text="Retards" />
+         <Button fx:id="logoutButton" mnemonicParsing="false" prefHeight="43.0" prefWidth="223.0" text="Deconnexion" />
+    </VBox>
+</center>
+</BorderPane>

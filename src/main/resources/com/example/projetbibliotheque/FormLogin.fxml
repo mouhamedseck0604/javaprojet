@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane stylesheets="@../../../CSS/FormLogin.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.">
+    <children>
+        <VBox alignment="CENTER" spacing="18" AnchorPane.leftAnchor="40" AnchorPane.rightAnchor="40" AnchorPane.topAnchor="40">
+
+            <!-- Titre -->
+            <Label styleClass="title-label" text="Connexion" />
+
+            <!-- Formulaire -->
+            <GridPane hgap="12" prefWidth="400.0" styleClass="form-grid" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints halignment="RIGHT" />
+                    <ColumnConstraints hgrow="ALWAYS" />
+                </columnConstraints>
+
+                <children>
+                    <Label styleClass="form-label" text="Nom d'utilisateur:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="txtlogin" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label styleClass="form-label" text="Mot de passe:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <PasswordField fx:id="txtpassword" styleClass="form-input" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <padding>
+                     <Insets top="10.0" />
+                  </padding></PasswordField>
+                </children>
+            <rowConstraints>
+               <RowConstraints />
+               <RowConstraints />
+            </rowConstraints>
+            </GridPane>
+
+            <!-- Bouton -->
+            <Button fx:id="btnconnect" onAction="#checkconnection" styleClass="login-button" text="Se connecter" />
+        </VBox>
+    </children>
+
+
+</AnchorPane>

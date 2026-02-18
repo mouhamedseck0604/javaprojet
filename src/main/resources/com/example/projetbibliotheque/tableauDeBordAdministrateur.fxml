@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<!--
+  Tableau de bord administrateur
+  - Barre de menus verticale inspirée de tbord1.png
+  - Corps de page type widgets/cartes inspiré de tbord2.png
+  - Palette de texte principale basée sur image4.png (texte clair sur fond vert olive)
+-->
+
+<BorderPane prefHeight="720.0" prefWidth="1122.0" style="-fx-background-color: #3f4b2e;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+
+    <!-- En‑tête supérieur -->
+    <top>
+        <HBox alignment="CENTER_RIGHT" spacing="16.0" style="-fx-padding: 16 24 16 24;" BorderPane.alignment="CENTER">
+            <children>
+                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 22px; -fx-font-weight: bold;" text="Tableau de bord administrateur" HBox.hgrow="ALWAYS" />
+
+                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 14px;" text="admin" />
+
+                <StackPane prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: #f7f5f0; -fx-background-radius: 16;">
+                    <children>
+                        <Circle fill="#3f4b2e" radius="12.0" />
+                    </children>
+                </StackPane>
+
+                <Button prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 16px;" text="⚙" />
+            </children>
+        </HBox>
+    </top>
+
+    <!-- Barre latérale gauche (menus tbord1) -->
+    <left>
+        <VBox prefWidth="220.0" spacing="8.0" style="-fx-background-color: rgba(0,0,0,0.10); -fx-padding: 24 16 24 16;">
+            <children>
+                <!-- Logo / titre -->
+                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 18px; -fx-font-weight: bold;" text="VSPRIT" />
+
+                <Separator />
+
+                <!-- Eléments de menu -->
+                <ToggleButton maxWidth="1.7976931348623157E308" selected="true" style="-fx-background-color: #007bff; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 6;" text="Tableau de bord" />
+                <ToggleButton maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Utilisateurs" />
+                <ToggleButton maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Adherents" />
+                <ToggleButton maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Livres" />
+                <ToggleButton maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Emprunts" />
+
+                <VBox VBox.vgrow="ALWAYS" />
+
+                <Label style="-fx-text-fill: rgba(247,245,240,0.70); -fx-font-size: 11px;" text="© 2026" />
+            </children>
+        </VBox>
+    </left>
+
+    <!-- Corps principal (widgets tbord2) -->
+    <center>
+        <GridPane hgap="16.0" style="-fx-padding: 24;" vgap="16.0">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="60" />
+                <ColumnConstraints percentWidth="40" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="45" />
+                <RowConstraints percentHeight="25" />
+                <RowConstraints percentHeight="30" />
+            </rowConstraints>
+
+            <!-- Ligne 1 : statistiques + visiteurs -->
+            <children>
+                <!-- Carte statistiques (graphique) -->
+                <StackPane style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 16;" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <children>
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 14px; -fx-font-weight: bold;" text="STATISTIQUES" />
+                                <Label style="-fx-text-fill: #6b7a4a; -fx-font-size: 12px;" text="Visites par mois" />
+                                <Region style="-fx-background-color: linear-gradient(to top, #ffe8d9, #ffffff); -fx-background-radius: 10;" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+
+                <!-- Carte visiteurs (camembert) -->
+                <StackPane style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 16;" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <children>
+                        <VBox spacing="8.0">
+                            <children>
+                                <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 14px; -fx-font-weight: bold;" text="TOTAL ADHERENT" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to right, #16c79a, #ff6f61); -fx-background-radius: 80;">
+                           <children>
+                              <Label text="250" textFill="#eae4e4">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+
+                <!-- Ligne 2 : cartes métriques -->
+                <HBox prefHeight="143.0" prefWidth="511.0" spacing="12.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <children>
+                        <VBox alignment="CENTER" spacing="4.0" style="-fx-background-color: #ff6f61; -fx-background-radius: 12; -fx-padding: 12;">
+                            <children>
+                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 11px; -fx-font-weight: bold;" text="EMPRUNTS DU MOIS" />
+                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 22px; -fx-font-weight: bold;" text="1 521" textAlignment="CENTER" />
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER_LEFT" spacing="4.0" style="-fx-background-color: #16c79a; -fx-background-radius: 12; -fx-padding: 12;">
+                            <children>
+                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 11px; -fx-font-weight: bold;" text="VISITES MENSUELLES" />
+                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 18px; -fx-font-weight: bold;" text="32 211 " />
+                            </children>
+                        </VBox>
+
+                        <VBox alignment="CENTER_LEFT" prefHeight="143.0" prefWidth="166.0" spacing="4.0" style="-fx-background-color: #ffd369; -fx-background-radius: 12; -fx-padding: 12;">
+                            <children>
+                                <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 11px; -fx-font-weight: bold;" text="PAGES VUES" />
+                                <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 18px; -fx-font-weight: bold;" text="351" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+
+                <!-- Carte téléchargements -->
+                <StackPane style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 16;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <VBox prefHeight="82.0" prefWidth="303.0" spacing="8.0">
+                     <children>
+                                <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 14px; -fx-font-weight: bold;" text="TOTAL LIVRES" />
+                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to right, #16c79a, #ff6f61); -fx-background-radius: 80;">
+                           <children>
+                              <Label text="100 " textFill="#eae4e4">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                        </VBox>
+                    </children>
+                </StackPane>
+
+                <!-- Ligne 3 : calendrier + évènements -->
+                <HBox spacing="16.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <children>
+      
+                        <!-- Bloc évènements -->
+                        <VBox prefHeight="171.0" prefWidth="510.0" spacing="8.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 16;">
+                            <children>
+                                <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 14px; -fx-font-weight: bold;" text="ÉVÈNEMENTS" />
+                                <Label style="-fx-text-fill: #6b7a4a; -fx-font-size: 11px;" text="12. Lorum ipsum dolor sit amet, consectetur adipiscing elit." wrapText="true" />
+                                <Label style="-fx-text-fill: #6b7a4a; -fx-font-size: 11px;" text="18. Phasellus vehicula libero in elit tempus aliquet." wrapText="true" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                  <!-- Calendrier simplifié -->
+                  <VBox spacing="8.0" style="-fx-background-color: #ffffff; -fx-background-radius: 12; -fx-padding: 16;" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                      <children>
+                          <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 14px; -fx-font-weight: bold;" text="CALENDRIER" />
+                          <GridPane hgap="4.0" vgap="4.0">
+                              <children>
+                                  <!-- grille 7x4 de petits rectangles -->
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #16c79a; -fx-background-radius: 3;" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #ff6f61; -fx-background-radius: 3;" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #ffd369; -fx-background-radius: 3;" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                                  <!-- cellules supplémentaires pour l'effet visuel -->
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #16c79a; -fx-background-radius: 3;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-radius: 3;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-radius: 3;" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-radius: 3;" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #16c79a; -fx-background-radius: 3;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                  <Region prefHeight="14.0" prefWidth="14.0" style="-fx-background-color: #ffffff; -fx-border-color: #e0e0e0; -fx-border-radius: 3;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                              </children>
+                     <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                     </rowConstraints>
+                          </GridPane>
+                      </children>
+                  </VBox>
+            </children>
+        </GridPane>
+    </center>
+
+</BorderPane>

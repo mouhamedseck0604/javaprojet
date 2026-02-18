@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.LivreInterfaceController">
+
+<!-- Barre de navigation en haut -->
+<top>
+    <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: #2c3e50; -fx-padding: 10;">
+        <Label style="-fx-text-fill: white; -fx-font-size: 18px;" text="Bibliothèque Municipale" />
+    </HBox>
+</top>
+
+<!-- Contenu principal -->
+<center>
+    <HBox alignment="TOP_LEFT" spacing="20" style="-fx-padding: 20;">
+
+        <!-- Formulaire à gauche -->
+        <VBox prefWidth="300" spacing="10">
+            <TextField fx:id="txtisbn" promptText="ISBN" />
+            <TextField fx:id="txttitre" promptText="Titre" />
+            <TextField fx:id="txtauteur" promptText="Auteur" />
+            <HBox spacing="10">
+                <ComboBox fx:id="categorieCombo" prefWidth="150" promptText="Catégorie" />
+            </HBox>
+            <TextField fx:id="txtannpub" promptText="Année de publication" />
+            <TextField fx:id="txtnbrexamp" promptText="Nombre d'exemplaires" />
+            <CheckBox fx:id="disponibleCheck" text="Disponible" />
+
+            <HBox spacing="10">
+                <Button fx:id="btnsave" onAction="#ajouterLivre" text="Enregistrer" />
+                <Button fx:id="btnupdate" onAction="#modifierLivre" text="Modifier" />
+               <Button fx:id="btndelete" onAction="#supprimerLivre" text="Supprimer" />
+               <Button fx:id="btnannul" mnemonicParsing="false" onAction="#annulerLivre" text="Annuler" />
+            </HBox>
+        </VBox>
+
+        <!-- Recherche et options à droite -->
+        <VBox prefWidth="400" spacing="20">
+            <HBox alignment="TOP_RIGHT" spacing="10">
+                <!-- Champ de recherche -->
+                <TextField fx:id="searchField" promptText="Rechercher..." />
+
+                <!-- ComboBox pour choisir le critère -->
+                <ComboBox fx:id="critereCombo" prefHeight="26.0" prefWidth="78.0" />
+
+                <!-- Bouton rechercher -->
+                <Button fx:id="btnreach" onAction="#rechercherLivre" text="Rechercher" />
+            </HBox>
+            <!-- Tu pourras ajouter des filtres ou options ici -->
+
+            <!-- Liste des livres -->
+            <TableView fx:id="livreTable" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="isbnColumn" prefWidth="100" text="ISBN" />
+                    <TableColumn fx:id="titreColumn" prefWidth="150" text="Titre" />
+                    <TableColumn fx:id="auteurColumn" prefWidth="150" text="Auteur" />
+                    <TableColumn fx:id="categorieColumn" prefWidth="100" text="Catégorie" />
+                    <TableColumn fx:id="disponibleColumn" prefWidth="80" text="Disponible" />
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</center>
+</BorderPane>

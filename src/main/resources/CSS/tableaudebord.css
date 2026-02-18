@@ -1,0 +1,11 @@
+.button {
+    -fx-background-color: #0078d7;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+}
+
+.label {
+    -fx-text-fill: #333;
+}

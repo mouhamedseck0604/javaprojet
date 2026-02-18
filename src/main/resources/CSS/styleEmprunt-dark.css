@@ -1,0 +1,75 @@
+/* Style général */
+.root {
+    -fx-font-family: "Segoe UI", "Arial";
+    -fx-background-color: #1e272e;
+}
+
+/* Titre principal */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #ecf0f1;
+}
+
+/* TableView */
+.table-view {
+    -fx-background-color: #2f3640;
+    -fx-border-color: #718093;
+    -fx-border-radius: 5;
+    -fx-padding: 5;
+}
+
+.table-view .column-header {
+    -fx-background-color: #353b48;
+    -fx-text-fill: #f5f6fa;
+    -fx-font-weight: bold;
+}
+
+.table-row-cell:filled:selected {
+    -fx-background-color: #00a8ff;
+    -fx-text-fill: white;
+}
+
+/* Boutons */
+.button {
+    -fx-background-radius: 5;
+    -fx-font-size: 13px;
+    -fx-padding: 8 15;
+    -fx-cursor: hand;
+    -fx-text-fill: white;
+}
+
+#btnAjouter {
+    -fx-background-color: #44bd32;
+}
+#btnAjouter:hover {
+    -fx-background-color: #4cd137;
+}
+
+#btnModifier {
+    -fx-background-color: #0097e6;
+}
+#btnModifier:hover {
+    -fx-background-color: #00a8ff;
+}
+
+#btnSupprimer {
+    -fx-background-color: #e84118;
+}
+#btnSupprimer:hover {
+    -fx-background-color: #ff4757;
+}
+
+#btnAnnuler {
+    -fx-background-color: #718093;
+}
+#btnAnnuler:hover {
+    -fx-background-color: #a4b0be;
+}
+
+/* ComboBox et DatePicker */
+.combo-box, .date-picker {
+    -fx-background-color: #2f3640;
+    -fx-border-color: #718093;
+    -fx-border-radius: 4;
+    -fx-text-fill: #f5f6fa;
+}
