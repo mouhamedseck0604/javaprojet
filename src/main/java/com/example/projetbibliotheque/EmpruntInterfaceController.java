@@ -45,7 +45,7 @@ public class EmpruntInterfaceController {
         daoEmprunt = new DaoEmpruntImpl(JpaUtil.getEntityManager());
         daoLivre = new DaoLivreImpl(JpaUtil.getEntityManager());
         DaoUtilisateur daouser = new DaoUtilisateurImpl(JpaUtil.getEntityManager());
-        DaoAdherent daoAdherent = new DaoAdherentImpl(JpaUtil.getEntityManager());
+        DaoAdherent daoAdherent = new DaoAdherentImpl();
 
         // Colonnes
         livreColumn.setCellValueFactory(data -> new SimpleStringProperty(data.getValue().getLivre().getTitre()));
@@ -66,7 +66,7 @@ public class EmpruntInterfaceController {
                 btnAjouter.setDisable(false);
             }
         });
-        toggleTheme.setOnAction(event -> toggleThemeMode());
+
 
         // Charger les Utilisateur depuis la base
         List<Utilisateur> utilisateurs = daouser.listerToutes();
@@ -159,23 +159,6 @@ public class EmpruntInterfaceController {
         dateRetourPicker.setValue(null);
         empruntTable.getSelectionModel().clearSelection();
         btnAjouter.setDisable(false);
-    }
-    @FXML
-
-    private void toggleThemeMode() {
-        Scene scene = toggleTheme.getScene();
-
-        if (toggleTheme.isSelected()) {
-            // Activer le mode sombre
-            scene.getStylesheets().clear();
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/CSS/styleEmprunt-dark.css")).toExternalForm());
-            toggleTheme.setText("☀️"); // icône soleil
-        } else {
-            // Revenir au mode clair
-            scene.getStylesheets().clear();
-            scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("/CSS/styleEmprunt.css")).toExternalForm());
-            toggleTheme.setText("🌙"); // icône lune
-        }
     }
 
     @FXML

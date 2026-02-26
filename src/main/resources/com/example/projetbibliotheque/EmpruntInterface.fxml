@@ -1,88 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<BorderPane stylesheets="@../../../CSS/styleEmprunt.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.EmpruntInterfaceController">
+<BorderPane xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.EmpruntInterfaceController" prefWidth="920" prefHeight="620">
 
-<!-- En-tête -->
-<top>
-    <BorderPane style="-fx-padding: 10;">
-        <!-- Titre aligné à gauche -->
-        <left>
-            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;" text="Gestion des Emprunts" />
-        </left>
+    <!-- Barre supérieure -->
+    <top>
+        <VBox spacing="4" style="-fx-background-color: linear-gradient(to right, #e6f0f7, #f6fbff); -fx-padding: 18;">
+            <Label text="Gestion des Emprunts" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2b2b2b;"/>
+            <Label text="Ajout, Modification, Suppression, Retour et Consultation" style="-fx-font-size: 12px; -fx-text-fill: #4b5563;"/>
+        </VBox>
+    </top>
 
-        <!-- ToggleSwitch à droite -->
-        <right>
-            <ToggleButton fx:id="toggleTheme" onAction="#toggleThemeMode" styleClass="toggle-switch" text="🌙" />
-        </right>
-    </BorderPane>
-</top>
+    <!-- Centre : TableView -->
+    <center>
+        <VBox spacing="16" style="-fx-border-color: #9fb7cc; -fx-border-width: 1; -fx-background-color: #f8fbfe; -fx-padding: 16; -fx-background-radius: 4; -fx-border-radius: 4;">
+        <TableView fx:id="empruntTable" prefHeight="400.0" prefWidth="1085.0" style="-fx-border-color: #9fb7cc; -fx-border-width: 1; -fx-background-color: #f8fbfe; -fx-background-radius: 4; -fx-border-radius: 4;">
+            <columns>
+                <TableColumn fx:id="livreColumn" prefWidth="150.0" text="Livre" />
+                <TableColumn fx:id="adherentColumn" prefWidth="150.0" text="Adhérent" />
+                <TableColumn fx:id="utilisateurColumn" prefWidth="150.0" text="Utilisateur" />
+                <TableColumn fx:id="dateEmpruntColumn" prefWidth="120.0" text="Date Emprunt" />
+                <TableColumn fx:id="dateRetourColumn" prefWidth="224.0" text="Date Retour" />
+                <TableColumn fx:id="statutColumn" prefWidth="153.6" text="Statut" />
+            </columns>
+        </TableView>
+        </VBox>
+    </center>
 
-<!-- Centre : TableView -->
-<center>
-    <TableView fx:id="empruntTable" prefHeight="400" prefWidth="800">
-        <columns>
-            <TableColumn fx:id="livreColumn" prefWidth="150" text="Livre" />
-            <TableColumn fx:id="adherentColumn" prefWidth="150" text="Adhérent" />
-            <TableColumn fx:id="utilisateurColumn" prefWidth="150" text="Utilisateur" />
-            <TableColumn fx:id="dateEmpruntColumn" prefWidth="120" text="Date Emprunt" />
-            <TableColumn fx:id="dateRetourColumn" prefWidth="120" text="Date Retour" />
-            <TableColumn fx:id="statutColumn" prefWidth="100" text="Statut" />
-        </columns>
-    </TableView>
-</center>
+    <!-- Bas : Formulaire + Boutons -->
+    <bottom>
+        <VBox spacing="16" style="-fx-padding: 16; -fx-background-color: #f8fbfe; -fx-border-color: #9fb7cc; -fx-border-width: 1; -fx-background-radius: 4; -fx-border-radius: 4;">
+            <GridPane hgap="20" vgap="12">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="120"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                    <RowConstraints/>
+                </rowConstraints>
+                <children>
+                    <Label text="Livre:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="livreCombo" promptText="Sélectionner un livre" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-<!-- Bas : Formulaire + Boutons -->
-<bottom>
-    <VBox spacing="10" style="-fx-padding: 15; -fx-background-color: #ecf0f1;">
-        <GridPane hgap="10" vgap="10">
-            <Label text="Livre:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-            <ComboBox fx:id="livreCombo" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                    <Label text="Adhérent:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="adherentCombo" promptText="Sélectionner un adhérent" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-            <Label text="Adhérent:" GridPane.rowIndex="1" />
-            <ComboBox fx:id="adherentCombo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <Label text="Utilisateur:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="utilisateurCombo" promptText="Sélectionner un utilisateur" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-            <Label text="Utilisateur:" GridPane.rowIndex="2" />
-            <ComboBox fx:id="utilisateurCombo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <Label text="Date Emprunt:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="dateEmpruntPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-            <Label text="Date Emprunt:" GridPane.rowIndex="3" />
-            <DatePicker fx:id="dateEmpruntPicker" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label text="Date Retour:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <DatePicker fx:id="dateRetourPicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                </children>
+            </GridPane>
 
-            <Label text="Date Retour:" GridPane.rowIndex="4" />
-            <DatePicker fx:id="dateRetourPicker" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <columnConstraints>
-               <ColumnConstraints />
-               <ColumnConstraints />
-            </columnConstraints>
-            <rowConstraints>
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-               <RowConstraints />
-            </rowConstraints>
-        </GridPane>
-
-        <HBox alignment="CENTER" spacing="15">
-            <Button fx:id="btnAjouter" onAction="#ajouterEmprunt" style="-fx-background-color: #27ae60; -fx-text-fill: white;" text="Ajouter" />
-            <Button fx:id="btnModifier" onAction="#modifierEmprunt" style="-fx-background-color: #2980b9; -fx-text-fill: white;" text="Modifier" />
-            <Button fx:id="btnSupprimer" onAction="#supprimerEmprunt" style="-fx-background-color: #c0392b; -fx-text-fill: white;" text="Supprimer" />
-            <Button fx:id="btnAnnuler" onAction="#annulerFormulaire" style="-fx-background-color: #7f8c8d; -fx-text-fill: white;" text="Annuler" />
-            <Button fx:id="btnRetour" onAction="#enregistrerRetour" style="-fx-background-color: #7f8c8d; -fx-text-fill: white;" text="Retour" />
-        </HBox>
-    </VBox>
-</bottom>
+            <HBox alignment="CENTER" spacing="15">
+                <Button fx:id="btnAjouter" onAction="#ajouterEmprunt" text="Ajouter" style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 6;"/>
+                <Button fx:id="btnModifier" onAction="#modifierEmprunt" text="Modifier" style="-fx-background-color: #2980b9; -fx-text-fill: white; -fx-background-radius: 6;"/>
+                <Button fx:id="btnSupprimer" onAction="#supprimerEmprunt" text="Supprimer" style="-fx-background-color: #c0392b; -fx-text-fill: white; -fx-background-radius: 6;"/>
+                <Button fx:id="btnAnnuler" onAction="#annulerFormulaire" text="Annuler" style="-fx-background-color: #7f8c8d; -fx-text-fill: white; -fx-background-radius: 6;"/>
+                <Button fx:id="btnRetour" onAction="#enregistrerRetour" text="Retour" style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-background-radius: 6;"/>
+            </HBox>
+        </VBox>
+    </bottom>
 </BorderPane>

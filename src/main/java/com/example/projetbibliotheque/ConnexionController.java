@@ -61,10 +61,10 @@ public class ConnexionController {
             // Redirection selon profil
             if (user.getProfil() == Profil.ADMIN) {
                 UserSession.init(user);
-                loadDashboard("tableauDeBordAdministrateur.fxml");
+                loadDashboard("NavBar.fxml");
             } else if (user.getProfil() == Profil.BIBLIOTHECAIRE) {
                 UserSession.init(user);
-                loadDashboard("BibilioInterface.fxml");
+                loadDashboard("NavBarBib.fxml");
             }
         } else {
             lblMessage.setText("Login ou mot de passe incorrect !");

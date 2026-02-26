@@ -22,7 +22,7 @@
   - Palette de texte principale basée sur image4.png (texte clair sur fond vert olive)
 -->
 
-<BorderPane prefHeight="720.0" prefWidth="1122.0" style="-fx-background-color: #3f4b2e;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane prefHeight="720.0" prefWidth="1122.0" style="-fx-background-color: #3f4b2e;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.DashboardController">
 
     <!-- En‑tête supérieur -->
     <top>
@@ -53,11 +53,11 @@
                 <Separator />
 
                 <!-- Eléments de menu -->
-                <ToggleButton maxWidth="1.7976931348623157E308" selected="true" style="-fx-background-color: #007bff; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 6;" text="Tableau de bord" />
-                <ToggleButton maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Utilisateurs" />
-                <ToggleButton maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Adherents" />
-                <ToggleButton maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Livres" />
-                <ToggleButton maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Emprunts" />
+                <ToggleButton fx:id="linktbrd" maxWidth="1.7976931348623157E308" selected="true" style="-fx-background-color: #007bff; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-font-weight: bold; -fx-background-radius: 6;" text="Tableau de bord" />
+                <ToggleButton fx:id="linkgutilisateur" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Utilisateurs" />
+                <ToggleButton fx:id="linkgAdherent" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Adherents" />
+                <ToggleButton fx:id="linkglivre" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Livres" />
+                <ToggleButton fx:id="linkgemprunt" maxWidth="1.7976931348623157E308" style="-fx-background-color: transparent; -fx-text-fill: #f7f5f0; -fx-font-size: 13px; -fx-background-radius: 6;" text="Gestion des Emprunts" />
 
                 <VBox VBox.vgrow="ALWAYS" />
 
@@ -102,7 +102,7 @@
                                 <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 14px; -fx-font-weight: bold;" text="TOTAL ADHERENT" />
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to right, #16c79a, #ff6f61); -fx-background-radius: 80;">
                            <children>
-                              <Label text="250" textFill="#eae4e4">
+                              <Label fx:id="lblTotalAdherents" text="250" textFill="#eae4e4">
                                  <font>
                                     <Font size="36.0" />
                                  </font>
@@ -117,17 +117,17 @@
                 <!-- Ligne 2 : cartes métriques -->
                 <HBox prefHeight="143.0" prefWidth="511.0" spacing="12.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
                     <children>
-                        <VBox alignment="CENTER" spacing="4.0" style="-fx-background-color: #ff6f61; -fx-background-radius: 12; -fx-padding: 12;">
+                        <VBox alignment="CENTER" prefHeight="143.0" prefWidth="178.0" spacing="4.0" style="-fx-background-color: #ff6f61; -fx-background-radius: 12; -fx-padding: 12;">
                             <children>
-                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 11px; -fx-font-weight: bold;" text="EMPRUNTS DU MOIS" />
-                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 22px; -fx-font-weight: bold;" text="1 521" textAlignment="CENTER" />
+                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 11px; -fx-font-weight: bold;" text="Retards" />
+                                <Label fx:id="lblRetards" style="-fx-text-fill: #f7f5f0; -fx-font-size: 22px; -fx-font-weight: bold;" text="1 521" textAlignment="CENTER" />
                             </children>
                         </VBox>
 
-                        <VBox alignment="CENTER_LEFT" spacing="4.0" style="-fx-background-color: #16c79a; -fx-background-radius: 12; -fx-padding: 12;">
+                        <VBox alignment="CENTER" prefHeight="143.0" prefWidth="139.0" spacing="4.0" style="-fx-background-color: #16c79a; -fx-background-radius: 12; -fx-padding: 12;">
                             <children>
-                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 11px; -fx-font-weight: bold;" text="VISITES MENSUELLES" />
-                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 18px; -fx-font-weight: bold;" text="32 211 " />
+                                <Label style="-fx-text-fill: #f7f5f0; -fx-font-size: 11px; -fx-font-weight: bold;" text="Emprunt du mois" />
+                                <Label fx:id="lblEmpruntsMois" style="-fx-text-fill: #f7f5f0; -fx-font-size: 18px; -fx-font-weight: bold;" text="32 211 " textAlignment="CENTER" />
                             </children>
                         </VBox>
 
@@ -148,7 +148,7 @@
                                 <Label style="-fx-text-fill: #3f4b2e; -fx-font-size: 14px; -fx-font-weight: bold;" text="TOTAL LIVRES" />
                         <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: linear-gradient(to right, #16c79a, #ff6f61); -fx-background-radius: 80;">
                            <children>
-                              <Label text="100 " textFill="#eae4e4">
+                              <Label fx:id="lblTotalLivres" text="100 " textFill="#eae4e4">
                                  <font>
                                     <Font size="36.0" />
                                  </font>

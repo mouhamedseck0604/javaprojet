@@ -1,0 +1,118 @@
+.root-bg {
+  -fx-background-color: linear-gradient(to bottom, #eef3fb, #ffffff);
+}
+.sidebar {
+  -fx-background-color: linear-gradient(to bottom, #0b1f3a, #142b4c);
+}
+.sidebar-header {
+  -fx-background-color: linear-gradient(to right, #1f5fe0, #1047b7);
+  -fx-padding: 12 16;
+}
+.brand-title {
+  -fx-text-fill: white;
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
+}
+.profile-name {
+  -fx-text-fill: #e5e7eb;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+}
+.profile-role {
+  -fx-text-fill: #cbd5e1;
+  -fx-font-size: 12px;
+}
+.sidebar-avatar {
+  -fx-font-size: 22px;
+  -fx-text-fill: #cbd5e1;
+}
+.menu-button {
+  -fx-background-color: linear-gradient(#ffffff, #f1f5fb);
+  -fx-background-radius: 12;
+  -fx-padding: 8 14;
+  -fx-text-fill: #1f2937;
+  -fx-border-color: rgba(255,255,255,0.25);
+  -fx-border-radius: 12;
+}
+.menu-button:hover {
+  -fx-background-color: linear-gradient(#ffffff, #e9f0fb);
+}
+.menu-button-primary {
+  -fx-background-color: linear-gradient(#ffffff, #e7effd);
+  -fx-border-color: #9ab7ff;
+}
+.menu-button-danger {
+  -fx-background-color: linear-gradient(#ffe7e7, #ffd9d9);
+  -fx-text-fill: #7f1d1d;
+  -fx-border-color: #ffc2c2;
+  -fx-background-radius: 12;
+  -fx-border-radius: 12;
+}
+.topbar {
+  -fx-background-color: linear-gradient(to right, #eaf2ff, #ffffff);
+  -fx-border-color: #dbe7ff;
+  -fx-border-width: 0 0 1 0;
+}
+.topbar-title {
+  -fx-text-fill: #0f172a;
+  -fx-font-weight: bold;
+  -fx-font-size: 18px;
+}
+.scroll-bg {
+  -fx-background-color: transparent;
+}
+.container {
+  -fx-padding: 24;
+}
+.title {
+  -fx-font-size: 20px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #0f172a;
+}
+.section-title {
+  -fx-text-fill: #475569;
+  -fx-font-size: 12px;
+}
+.card {
+  -fx-background-radius: 20;
+  -fx-padding: 14;
+}
+.pill {
+  -fx-background-radius: 24;
+  -fx-padding: 12 16;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.0, 0, 3);
+}
+.pill-blue {
+  -fx-background-color: linear-gradient(to right, #4aa4ff, #2b6efb);
+}
+.pill-red {
+  -fx-background-color: linear-gradient(to right, #ff6b6b, #f03939);
+}
+.pill-purple {
+  -fx-background-color: linear-gradient(to right, #8c7bff, #6a5bf5);
+}
+.pill-green {
+  -fx-background-color: linear-gradient(to right, #4ade80, #16a34a);
+}
+.pill-orange {
+  -fx-background-color: linear-gradient(to right, #fbbf24, #f59e0b);
+}
+.card-icon {
+  -fx-text-fill: white;
+  -fx-font-size: 20px;
+}
+.card-title {
+  -fx-text-fill: white;
+  -fx-font-size: 16px;
+  -fx-font-weight: bold;
+}
+.metric {
+  -fx-text-fill: white;
+  -fx-font-size: 28px;
+  -fx-font-weight: 700;
+}
+.table-title {
+  -fx-text-fill: #0f172a;
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+}

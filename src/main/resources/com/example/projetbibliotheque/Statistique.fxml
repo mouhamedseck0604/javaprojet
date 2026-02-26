@@ -12,9 +12,9 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="558.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.StatistiqueController">
+<BorderPane prefHeight="558.0" prefWidth="895.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.StatistiqueController" style="-fx-background-color: linear-gradient(to bottom, #f2f7fc, #ffffff);">
     <center>
-        <BorderPane style="-fx-background-color: #f9fafb;">
+        <BorderPane>
             <center>
                 <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
                     <content>
@@ -30,7 +30,7 @@
                                     <RowConstraints vgrow="NEVER" />
                                 </rowConstraints>
                                 <children>
-                                    <VBox style="-fx-background-color: white; -fx-padding: 16; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="0">
+                                    <VBox style="-fx-background-color: linear-gradient(to bottom, #eaf2ff, #ffffff); -fx-border-color: #bcd4ff; -fx-border-width: 1; -fx-padding: 16; -fx-background-radius: 8; -fx-border-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="0">
                                         <HBox alignment="CENTER_LEFT" spacing="12">
                                             <Label style="-fx-font-size: 20px;" text="📚" />
                                             <VBox spacing="2">
@@ -40,10 +40,10 @@
                                         </HBox>
                                         <HBox>
                                             <padding> <Insets bottom="0" left="0" right="0" top="12" /> </padding>
-                                            <Button onAction="#onUtilisateurs" style="-fx-background-color: #eff6ff; -fx-text-fill: #2563eb; -fx-background-radius: 6;" text="Voir les utilisateurs" />
+                                            <Button onAction="#onUtilisateurs" style="-fx-background-color: linear-gradient(#fafcfe, #e6eef8), linear-gradient(#e2ecf8, #c9daef), linear-gradient(#ffffff, #eef5ff); -fx-background-insets: 0,1,2; -fx-background-radius: 8,7,6; -fx-border-color: #c9d7e6; -fx-border-radius: 6; -fx-padding: 8 14; -fx-text-fill: #334155; -fx-font-size: 13px;" text="Voir les utilisateurs" />
                                         </HBox>
                                     </VBox>
-                                    <VBox style="-fx-background-color: white; -fx-padding: 16; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="1">
+                                    <VBox style="-fx-background-color: linear-gradient(to bottom, #f3e8ff, #ffffff); -fx-border-color: #d8b4fe; -fx-border-width: 1; -fx-padding: 16; -fx-background-radius: 8; -fx-border-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="1">
                                         <HBox alignment="CENTER_LEFT" spacing="12">
                                             <Label style="-fx-font-size: 20px;" text="👥" />
                                             <VBox spacing="2">
@@ -53,10 +53,10 @@
                                         </HBox>
                                         <HBox>
                                             <padding> <Insets bottom="0" left="0" right="0" top="12" /> </padding>
-                                            <Button fx:id="btn2Adherent" onAction="#onAdherent" style="-fx-background-color: #f3e8ff; -fx-text-fill: #7c3aed; -fx-background-radius: 6;" text="Gestion des adherents" />
+                                            <Button fx:id="btn2Adherent" onAction="#onAdherent" style="-fx-background-color: linear-gradient(#fafcfe, #e6eef8), linear-gradient(#e2ecf8, #c9daef), linear-gradient(#ffffff, #eef5ff); -fx-background-insets: 0,1,2; -fx-background-radius: 8,7,6; -fx-border-color: #c9d7e6; -fx-border-radius: 6; -fx-padding: 8 14; -fx-text-fill: #334155; -fx-font-size: 13px;" text="Gestion des adherents" />
                                         </HBox>
                                     </VBox>
-                                    <VBox style="-fx-background-color: white; -fx-padding: 16; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="2">
+                                    <VBox style="-fx-background-color: linear-gradient(to bottom, #e6fffa, #ffffff); -fx-border-color: #b2f5ea; -fx-border-width: 1; -fx-padding: 16; -fx-background-radius: 8; -fx-border-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="2">
                                         <HBox alignment="CENTER_LEFT" spacing="12">
                                             <Label style="-fx-font-size: 20px;" text="📕" />
                                             <VBox spacing="2">
@@ -66,11 +66,11 @@
                                         </HBox>
                                         <HBox>
                                             <padding> <Insets bottom="0" left="0" right="0" top="12" /> </padding>
-                                            <Button fx:id="btnVEmprunt" style="-fx-background-color: #f3e8ff; -fx-text-fill: #7c3aed; -fx-background-radius: 6;" text="Voir les emprunts" />
+                                            <Button fx:id="btnVEmprunt" style="-fx-background-color: linear-gradient(#fafcfe, #e6eef8), linear-gradient(#e2ecf8, #c9daef), linear-gradient(#ffffff, #eef5ff); -fx-background-insets: 0,1,2; -fx-background-radius: 8,7,6; -fx-border-color: #c9d7e6; -fx-border-radius: 6; -fx-padding: 8 14; -fx-text-fill: #334155; -fx-font-size: 13px;" text="Voir les emprunts" />
                                         </HBox>
                                     </VBox>
 
-                                    <VBox style="-fx-background-color: white; -fx-padding: 16; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);">
+                                    <VBox style="-fx-background-color: linear-gradient(to bottom, #eff6ff, #ffffff); -fx-border-color: #bfdbfe; -fx-border-width: 1; -fx-padding: 16; -fx-background-radius: 8; -fx-border-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);">
                                         <children>
                                             <HBox alignment="CENTER_LEFT" spacing="12">
                                                 <children>
@@ -88,7 +88,7 @@
                                                     <Insets bottom="0" left="0" right="0" top="12" />
                                                 </padding>
                                                 <children>
-                                                    <Button fx:id="btn2Livre" onAction="#onLivres" style="-fx-background-color: #eff6ff; -fx-text-fill: #2563eb; -fx-background-radius: 6;" text="Gestion des livres" />
+                                                    <Button fx:id="btn2Livre" onAction="#onLivres" style="-fx-background-color: linear-gradient(#fafcfe, #e6eef8), linear-gradient(#e2ecf8, #c9daef), linear-gradient(#ffffff, #eef5ff); -fx-background-insets: 0,1,2; -fx-background-radius: 8,7,6; -fx-border-color: #c9d7e6; -fx-border-radius: 6; -fx-padding: 8 14; -fx-text-fill: #334155; -fx-font-size: 13px;" text="Gestion des livres" />
                                                 </children>
                                             </HBox>
                                         </children>
@@ -105,7 +105,7 @@
                                     <RowConstraints vgrow="NEVER" />
                                 </rowConstraints>
                                 <children>
-                                    <VBox style="-fx-background-color: white; -fx-padding: 16; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="0">
+                                    <VBox style="-fx-background-color: linear-gradient(to bottom, #e0f2fe, #ffffff); -fx-border-color: #bae6fd; -fx-border-width: 1; -fx-padding: 16; -fx-background-radius: 8; -fx-border-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="0">
                                         <children>
                                             <HBox alignment="CENTER_LEFT" spacing="12">
                                                 <children>
@@ -123,12 +123,12 @@
                                                     <Insets bottom="0" left="0" right="0" top="12" />
                                                 </padding>
                                                 <children>
-                                                    <Button onAction="#onUtilisateurs" style="-fx-background-color: #eff6ff; -fx-text-fill: #2563eb; -fx-background-radius: 6;" text="Voir les utilisateurs" />
+                                                    <Button onAction="#onUtilisateurs" style="-fx-background-color: linear-gradient(#fafcfe, #e6eef8), linear-gradient(#e2ecf8, #c9daef), linear-gradient(#ffffff, #eef5ff); -fx-background-insets: 0,1,2; -fx-background-radius: 8,7,6; -fx-border-color: #c9d7e6; -fx-border-radius: 6; -fx-padding: 8 14; -fx-text-fill: #334155; -fx-font-size: 13px;" text="Voir les utilisateurs" />
                                                 </children>
                                             </HBox>
                                         </children>
                                     </VBox>
-                                    <VBox style="-fx-background-color: white; -fx-padding: 16; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);">
+                                    <VBox style="-fx-background-color: linear-gradient(to bottom, #e0e7ff, #ffffff); -fx-border-color: #c7d2fe; -fx-border-width: 1; -fx-padding: 16; -fx-background-radius: 8; -fx-border-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);">
                                         <children>
                                             <HBox alignment="CENTER_LEFT" spacing="12">
                                                 <children>
@@ -146,12 +146,12 @@
                                                     <Insets bottom="0" left="0" right="0" top="12" />
                                                 </padding>
                                                 <children>
-                                                    <Button onAction="#onUtilisateurs" style="-fx-background-color: #eff6ff; -fx-text-fill: #2563eb; -fx-background-radius: 6;" text="Voir les utilisateurs" />
+                                                    <Button onAction="#onUtilisateurs" style="-fx-background-color: linear-gradient(#fafcfe, #e6eef8), linear-gradient(#e2ecf8, #c9daef), linear-gradient(#ffffff, #eef5ff); -fx-background-insets: 0,1,2; -fx-background-radius: 8,7,6; -fx-border-color: #c9d7e6; -fx-border-radius: 6; -fx-padding: 8 14; -fx-text-fill: #334155; -fx-font-size: 13px;" text="Voir les utilisateurs" />
                                                 </children>
                                             </HBox>
                                         </children>
                                     </VBox>
-                                    <VBox style="-fx-background-color: white; -fx-padding: 16; -fx-background-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);">
+                                    <VBox style="-fx-background-color: linear-gradient(to bottom, #ffe4e6, #ffffff); -fx-border-color: #fecdd3; -fx-border-width: 1; -fx-padding: 16; -fx-background-radius: 8; -fx-border-radius: 8; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);">
                                         <children>
                                             <HBox alignment="CENTER_LEFT" spacing="12">
                                                 <children>
@@ -169,7 +169,7 @@
                                                     <Insets bottom="0" left="0" right="0" top="12" />
                                                 </padding>
                                                 <children>
-                                                    <Button fx:id="btnVRetard" onAction="#onUtilisateurs" style="-fx-background-color: #eff6ff; -fx-text-fill: #2563eb; -fx-background-radius: 6;" text="Voir les retards" />
+                                                    <Button fx:id="btnVRetard" onAction="#onUtilisateurs" style="-fx-background-color: linear-gradient(#fafcfe, #e6eef8), linear-gradient(#e2ecf8, #c9daef), linear-gradient(#ffffff, #eef5ff); -fx-background-insets: 0,1,2; -fx-background-radius: 8,7,6; -fx-border-color: #c9d7e6; -fx-border-radius: 6; -fx-padding: 8 14; -fx-text-fill: #334155; -fx-font-size: 13px;" text="Voir les retards" />
                                                 </children>
                                             </HBox>
                                         </children>

@@ -1,11 +1,75 @@
-.button {
-    -fx-background-color: #0078d7;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 5;
-    -fx-padding: 8 15;
+.root-bg {
+  -fx-background-color: linear-gradient(to bottom, #f2f7fc, #ffffff);
 }
-
-.label {
-    -fx-text-fill: #333;
+.sidebar {
+  -fx-background-color: white;
+  -fx-border-color: #c9d7e6;
+  -fx-border-width: 0 1 0 0;
+}
+.sidebar-header {
+  -fx-background-color: linear-gradient(to bottom, #3b82f6, #2563eb);
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0.0, 0, 2);
+}
+.brand-title {
+  -fx-text-fill: white;
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
+}
+.topbar {
+  -fx-background-color: linear-gradient(to bottom, #e6f0f7, #f6fbff), white;
+  -fx-background-insets: 0,1;
+  -fx-border-color: #c9d7e6;
+  -fx-border-width: 0 0 1 0;
+}
+.topbar-title {
+  -fx-font-size: 18px;
+  -fx-font-weight: bold;
+  -fx-text-fill: #0f172a;
+}
+.menu-button {
+  -fx-background-color: linear-gradient(#fafcfe, #e6eef8), linear-gradient(#e2ecf8, #c9daef), linear-gradient(#ffffff, #eef5ff);
+  -fx-background-insets: 0,1,2;
+  -fx-background-radius: 8,7,6;
+  -fx-border-color: #c9d7e6;
+  -fx-border-radius: 6;
+  -fx-padding: 8 14;
+  -fx-text-fill: #334155;
+  -fx-font-size: 13px;
+}
+.menu-button:hover {
+  -fx-background-color: linear-gradient(#ffffff, #eef5ff), linear-gradient(#e6f0fc, #cfe0f5), linear-gradient(#ffffff, #f3f7ff);
+}
+.menu-button:pressed, .menu-button:focused:pressed {
+  -fx-background-insets: 1,1.5,2;
+  -fx-translate-y: 1;
+}
+.menu-button-primary {
+  -fx-border-color: #9fb7cc;
+  -fx-text-fill: #1f2937;
+}
+.menu-button-danger {
+  -fx-background-color: linear-gradient(#fef2f2, #fde8e8), linear-gradient(#fee2e2, #fecaca);
+  -fx-background-insets: 0,1;
+  -fx-background-radius: 8,7;
+  -fx-border-color: #fecaca;
+  -fx-border-radius: 7;
+  -fx-text-fill: #7f1d1d;
+}
+.menu-button-danger:hover {
+  -fx-background-color: linear-gradient(#fff5f5, #ffecec), linear-gradient(#ffe6e6, #ffd7d7);
+}
+.profile-name {
+  -fx-font-size: 14px;
+  -fx-font-weight: bold;
+}
+.profile-role {
+  -fx-font-size: 12px;
+  -fx-text-fill: #6b7280;
+}
+.sidebar-avatar {
+  -fx-font-size: 24px;
+  -fx-text-fill: #9ca3af;
+}
+.scroll-bg {
+  -fx-background-color: transparent;
 }

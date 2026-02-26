@@ -12,4 +12,6 @@ public interface DaoUtilisateur {
     Utilisateur trouverParLogin(String login);
 
     List<Utilisateur> listerToutes();
+
+    void reinitialiserMotDePasse(Utilisateur u, String nouveauMotDePasse);
 }

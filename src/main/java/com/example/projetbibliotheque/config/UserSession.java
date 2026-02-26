@@ -5,7 +5,7 @@ import com.example.projetbibliotheque.entities.Utilisateur;
 public class UserSession {
     private static UserSession instance;
 
-    private final Utilisateur utilisateur;
+    private Utilisateur utilisateur;
 
     private UserSession(Utilisateur utilisateur) {
         this.utilisateur = utilisateur;
@@ -28,5 +28,9 @@ public class UserSession {
     }
 
 
+    // Setter
+    public void setUtilisateur(Utilisateur utilisateur) {
+        this.utilisateur = utilisateur;
+    }
 
 }

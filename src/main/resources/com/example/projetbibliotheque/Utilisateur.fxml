@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="620" prefWidth="920" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="com.example.projetbibliotheque.UtilisateurController">
+    <top>
+        <VBox spacing="4" style="-fx-background-color: linear-gradient(to right, #e6f0f7, #f6fbff); -fx-padding: 18;">
+            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2b2b2b;" text="Gestion des Utilisateurs" />
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #4b5563;" text="Ajout, Modification, Suppression, Réinitialisation et Activation/Désactivation" />
+        </VBox>
+    </top>
+
+    <center>
+        <VBox spacing="12" style="-fx-padding: 16;">
+            <VBox spacing="16" style="-fx-border-color: #9fb7cc; -fx-border-width: 1; -fx-background-color: #f8fbfe; -fx-padding: 16; -fx-background-radius: 4; -fx-border-radius: 4;">
+                <GridPane hgap="24" vgap="12">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="120" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                        <ColumnConstraints minWidth="120" />
+                        <ColumnConstraints hgrow="ALWAYS" />
+                    </columnConstraints>
+                    <children>
+                        <Label text="Login" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtLogin" promptText="Login" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <Label text="Mot de passe" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <PasswordField fx:id="txtMotDePasse" promptText="Mot de passe" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                        <Label text="Nom" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtNom" promptText="Nom" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Prénom" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtPrenom" promptText="Prénom" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                        <Label text="Email" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtEmail" promptText="Email" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label text="Profil" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <ComboBox fx:id="comboProfil" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                        <Label text="Actif" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <CheckBox fx:id="chkActif" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    </children>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+
+                <HBox alignment="CENTER" spacing="12">
+                    <Button onAction="#ajouterUtilisateur" text="Ajouter" />
+                    <Button onAction="#modifierUtilisateur" text="Modifier" />
+                    <Button onAction="#supprimerUtilisateur" text="Supprimer" />
+                    <Button onAction="#reinitialiserMotDePasse" text="Réinitialiser mot de passe" />
+                    <Button onAction="#viderChamps" text="Annuler" />
+                </HBox>
+            </VBox>
+
+            <TableView fx:id="tableUtilisateurs" prefHeight="360">
+                <columns>
+               <TableColumn fx:id="colid" prefWidth="75.0" text="#ID" />
+                    <TableColumn fx:id="colLogin" prefWidth="145.0" text="Login" />
+                    <TableColumn fx:id="colNom" prefWidth="135.0" text="Nom" />
+               <TableColumn fx:id="colprenom" prefWidth="180.0" text="Prenom" />
+                    <TableColumn fx:id="colEmail" prefWidth="210.0" text="Email" />
+                    <TableColumn fx:id="colProfil" prefWidth="104.79998779296875" text="Profil" />
+               <TableColumn fx:id="coletat" prefWidth="60.0" text="Etat" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+</BorderPane>

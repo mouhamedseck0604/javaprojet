@@ -1,5 +1,6 @@
 package com.example.projetbibliotheque.Dao;
 
+import com.example.projetbibliotheque.config.PasswordUtil;
 import com.example.projetbibliotheque.entities.Utilisateur;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
@@ -38,7 +39,7 @@ public class DaoUtilisateurImpl implements DaoUtilisateur {
     @Override
     public void creer(Utilisateur user) {
         em.getTransaction().begin();
-        user.setMotDePasse(passwordCrypte.hashPassword(user.getMotDePasse())); // hash avant insertion
+        user.setMotDePasse(PasswordUtil.hashPassword(user.getMotDePasse())); // hash avant insertion
         em.persist(user);
         em.getTransaction().commit();
     }
@@ -74,5 +75,13 @@ public class DaoUtilisateurImpl implements DaoUtilisateur {
     @Override
     public List<Utilisateur> listerToutes() {
         return em.createQuery("SELECT c FROM Utilisateur c", Utilisateur.class).getResultList();
+    }
+    @Override
+    public void reinitialiserMotDePasse(Utilisateur u, String nouveauMotDePasse) {
+        em.getTransaction().begin();
+        u.setMotDePasse(PasswordUtil.hashPassword(nouveauMotDePasse));
+        em.merge(u);
+        em.getTransaction().commit();
+        em.close();
     }
 }

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="620.0" prefWidth="634.0" spacing="24" styleClass="container" stylesheets="@../../../CSS/Style.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.StatistiqueBibController">
+    <children>
+        <VBox spacing="8">
+            <Label styleClass="title" text="📊 Tableau de bord" />
+            <Label styleClass="section-title" text="Vue d'ensemble des activités de la bibliothèque" />
+        </VBox>
+
+        <GridPane hgap="24" prefHeight="175.0" prefWidth="586.0" vgap="24">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="25" />
+                <ColumnConstraints percentWidth="25" />
+                <ColumnConstraints percentWidth="25" />
+                <ColumnConstraints percentWidth="25" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints fillHeight="true" />
+            </rowConstraints>
+            <padding>
+                <Insets bottom="8" left="0" right="0" top="8" />
+            </padding>
+            <children>
+                <VBox prefHeight="152.0" prefWidth="130.0" spacing="12" styleClass="card" GridPane.columnIndex="0">
+                    <Label styleClass="card-icon" text="📚" />
+                    <Label prefHeight="18.0" prefWidth="87.0" styleClass="card-title" text="Total Livres">
+                  <font>
+                     <Font size="18.0" />
+                  </font></Label>
+               <Label fx:id="lbltolallivre" alignment="CENTER" prefHeight="15.0" prefWidth="87.0" text="100">
+                  <font>
+                     <Font size="36.0" />
+                  </font>
+               </Label>
+                    <Label fx:id="lblTotalLivres" styleClass="metric" />
+                </VBox>
+                <VBox spacing="12" styleClass="card" GridPane.columnIndex="1">
+                    <Label styleClass="card-icon" text="👥" />
+                    <Label prefHeight="18.0" prefWidth="85.0" styleClass="card-title" text="Adhérents">
+                  <font>
+                     <Font size="18.0" />
+                  </font></Label>
+               <Label fx:id="lbltotaladherent" alignment="CENTER" prefHeight="15.0" prefWidth="87.0" text="100">
+                  <font>
+                     <Font size="36.0" />
+                  </font>
+               </Label>
+                    <Label fx:id="lblTotalAdherents" styleClass="metric" />
+                </VBox>
+                <VBox spacing="12" styleClass="card" GridPane.columnIndex="2">
+                    <Label styleClass="card-icon" text="📅" />
+                    <Label styleClass="card-title" text="Emprunts du mois">
+                  <font>
+                     <Font size="18.0" />
+                  </font></Label>
+               <Label fx:id="lbltotalemprunt" alignment="CENTER" prefHeight="15.0" prefWidth="87.0" text="100">
+                  <font>
+                     <Font size="36.0" />
+                  </font>
+               </Label>
+                    <Label fx:id="lblEmpruntsMois" styleClass="metric" />
+                </VBox>
+                <VBox spacing="12" styleClass="card" GridPane.columnIndex="3">
+                    <Label styleClass="card-icon" text="⚠️" />
+                    <Label styleClass="card-title" text="Retards">
+                  <font>
+                     <Font size="18.0" />
+                  </font></Label>
+               <Label fx:id="lbltotalretard" alignment="CENTER" prefHeight="15.0" prefWidth="87.0" text="100">
+                  <font>
+                     <Font size="36.0" />
+                  </font>
+               </Label>
+                    <Label fx:id="lblRetards" styleClass="metric" />
+                </VBox>
+            </children>
+        </GridPane>
+    </children>
+</VBox>

@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.projetbibliotheque.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<BorderPane prefHeight="680.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.projetbibliotheque.ProfilBibliothequeController" styleClass="root-bg">
+    <stylesheets>
+        <URL value="@styles/theme.css" />
+    </stylesheets>
+    <left>
+        <VBox prefHeight="680.0" prefWidth="240.0" spacing="0" styleClass="sidebar">
+            <HBox alignment="CENTER" prefHeight="64.0" prefWidth="240.0" styleClass="sidebar-header">
+                <Label styleClass="brand-title" text="Bibliothèque" />
+            </HBox>
+            <VBox spacing="8">
+                <padding><Insets top="16" right="16" bottom="16" left="16"/></padding>
+                <Button fx:id="btnDashboard" maxWidth="Infinity" onAction="#onDashboard" styleClass="menu-button menu-button-primary" text="📊 Tableau de bord" />
+                <Button fx:id="btnEmprunts" maxWidth="Infinity" onAction="#onEmprunts" styleClass="menu-button" text="🔄 Emprunts" />
+                <Button fx:id="btnAdherents" maxWidth="Infinity" onAction="#onAdherents" styleClass="menu-button" text="📇 Adhérents" />
+                <Button fx:id="btnLivres" maxWidth="Infinity" onAction="#onLivres" styleClass="menu-button" text="📚 Livres" />
+            </VBox>
+        </VBox>
+    </left>
+    <center>
+        <BorderPane>
+            <top>
+                <HBox alignment="CENTER_LEFT" spacing="16" styleClass="topbar">
+                    <padding><Insets top="12" right="12" bottom="12" left="12"/></padding>
+                    <Label styleClass="topbar-title" text="Tableau de bord" />
+                </HBox>
+            </top>
+            <center>
+                <ScrollPane fitToWidth="true" style="-fx-background-color: transparent;">
+                    <content>
+                        <VBox spacing="24">
+                            <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+                            <GridPane hgap="24" vgap="24">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" percentWidth="33" />
+                                    <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" percentWidth="33" />
+                                    <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" percentWidth="33" />
+                                </columnConstraints>
+                                <rowConstraints><RowConstraints vgrow="NEVER" /></rowConstraints>
+                                <children>
+                                    <VBox style="-fx-background-color: white; -fx-padding: 14; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="0">
+                                        <HBox alignment="CENTER_LEFT" spacing="12">
+                                            <Label style="-fx-font-size: 20px;" text="🔄" />
+                                            <VBox spacing="2">
+                                                <Label style="-fx-font-size: 12px; -fx-text-fill: #6b7280;" text="Emprunts du jour" />
+                                                <Label fx:id="lblEmpruntsJour" style="-fx-font-size: 22px; -fx-font-weight: 700;" text="0" />
+                                            </VBox>
+                                        </HBox>
+                                        <HBox><padding><Insets top="10"/></padding><Button onAction="#onEmprunts" styleClass="menu-button" text="Voir les emprunts"/></HBox>
+                                    </VBox>
+                                    <VBox style="-fx-background-color: white; -fx-padding: 14; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="1">
+                                        <HBox alignment="CENTER_LEFT" spacing="12">
+                                            <Label style="-fx-font-size: 20px;" text="📖" />
+                                            <VBox spacing="2">
+                                                <Label style="-fx-font-size: 12px; -fx-text-fill: #6b7280;" text="Retours à traiter" />
+                                                <Label fx:id="lblRetours" style="-fx-font-size: 22px; -fx-font-weight: 700;" text="0" />
+                                            </VBox>
+                                        </HBox>
+                                        <HBox><padding><Insets top="10"/></padding><Button onAction="#onEmprunts" styleClass="menu-button" text="Gérer les retours"/></HBox>
+                                    </VBox>
+                                    <VBox style="-fx-background-color: white; -fx-padding: 14; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.06), 8, 0.0, 0, 2);" GridPane.columnIndex="2">
+                                        <HBox alignment="CENTER_LEFT" spacing="12">
+                                            <Label style="-fx-font-size: 20px;" text="👥" />
+                                            <VBox spacing="2">
+                                                <Label style="-fx-font-size: 12px; -fx-text-fill: #6b7280;" text="Nouveaux adhérents" />
+                                                <Label fx:id="lblNouveauxAdherents" style="-fx-font-size: 22px; -fx-font-weight: 700;" text="0" />
+                                            </VBox>
+                                        </HBox>
+                                        <HBox><padding><Insets top="10"/></padding><Button onAction="#onAdherents" styleClass="menu-button" text="Voir les adhérents"/></HBox>
+                                    </VBox>
+                                </children>
+                            </GridPane>
+                            <HBox spacing="12">
+                                <Button onAction="#onNouvelEmprunt" styleClass="menu-button" text="Nouvel emprunt"/>
+                                <Button onAction="#onRetourLivre" styleClass="menu-button" text="Retour de livre"/>
+                                <Button onAction="#onAjouterAdherent" styleClass="menu-button" text="Ajouter un adhérent"/>
+                            </HBox>
+                        </VBox>
+                    </content>
+                    <VBox.vgrow><Priority fx:constant="ALWAYS"/></VBox.vgrow>
+                </ScrollPane>
+            </center>
+        </BorderPane>
+    </center>
+</BorderPane>
